@@ -14,7 +14,7 @@ class CropProductionPage extends ConsumerWidget {
     return cropDataAsync.when(
       data: (data) {
         return Scaffold(
-          appBar: AppBar(title: Text('Crop Production Chart')),
+          appBar: AppBar(title: const Text('Crop Production Chart')),
           body: Padding(
             padding: const EdgeInsets.all(16.0),
             child: Column(
@@ -31,20 +31,21 @@ class CropProductionPage extends ConsumerWidget {
                     ref.read(selectedCropProvider.notifier).state = value;
                   },
                 ),
-                SizedBox(height: 16),
-                Expanded(
+                const SizedBox(height: 16),
+                const Expanded(
                   child: CropProductionChart(),
                 ),
-                SizedBox(height: 16),
+                const SizedBox(height: 16),
                 if (selectedCrop != null) ...[
                   Text(
                     'Selected Crop: $selectedCrop',
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    style: const TextStyle(
+                        fontSize: 18, fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(height: 8),
+                  const SizedBox(height: 8),
                   Text(
                     'Production: ${data.firstWhere((crop) => crop.crop == selectedCrop).production} Million Tonnes',
-                    style: TextStyle(fontSize: 16),
+                    style: const TextStyle(fontSize: 16),
                   ),
                 ],
               ],
@@ -52,7 +53,7 @@ class CropProductionPage extends ConsumerWidget {
           ),
         );
       },
-      loading: () => Center(child: CircularProgressIndicator()),
+      loading: () => const Center(child: CircularProgressIndicator()),
       error: (error, stack) => Center(child: Text('Error: $error')),
     );
   }

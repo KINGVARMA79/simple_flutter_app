@@ -4,6 +4,8 @@ import 'package:flutter_application_1/provider/data_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class CropProductionChart extends ConsumerWidget {
+  const CropProductionChart({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final cropDataAsync = ref.watch(cropProductionProvider);
