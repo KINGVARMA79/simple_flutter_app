@@ -12,7 +12,7 @@ dependencies:
   go_router: ^6.0.0
   flutter_riverpod: ^2.0.0
   http: ^1.2.2
-  fl_chart: ^0.50.1 # Add the fl_chart package for drawing charts
+  fl_chart: ^0.69.0
 
 
 dev_dependencies:
